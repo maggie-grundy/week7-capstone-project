@@ -54,7 +54,60 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
-I used chatgpt to help me break down my approach into steps to get started! 
+I used chatgpt to help me break down my approach into steps to get started! I tried two lists here, one more big-picture and one a little more granular to try moving between them if I get stuck in details mode or big picture mode and need to shift.
+
+### Working Notes
+
+I often think of little things to do while I'm going through a big project and because I tend to forget things quickly, I'll jump right to doing the thing and then forget what I was working on before or lose momentum. So here I'm going to try making myself a small section with a checklist to place things like this that I want to do or look up later!
+
+- [] Check how to get the magnifying glass icon image inside of the input field itself. I think a span would work maybe? I know we did this in an earlier project (mortgage calculator) or something similar with those input fields so check that first.
+
+### Broad Checklist
+
+**Phase 1: Setup & Skeleton**
+
+- [X] Create your project folder & version control (git) so you track changes.
+- [X] Set up basic HTML structure: main container, header, search bar, results area, forecast area, etc.
+
+- [] Write the CSS skeleton: define your grid / sections layout (for desktop & mobile). Use a display: grid (or flex) for the main layout, then inside each card use display: flex as you mentioned.
+- [] Add class names for the major blocks (search, current weather, metrics, forecast cards).
+
+- [X] Set up a CSS reset / base styles so browser differences don’t trip you up.
+
+**Phase 2: Responsive layout & styling**
+
+- [] Build the mobile git version first (often easiest) — get the sections stacking nicely, typography sizes, spacing.
+- [] Then work desktop-layout: e.g., maybe sidebar + main section, or split layout.
+- [] Define your grid for the cards/forecast area: maybe a 7-day forecast grid.
+- [] Use flex in cards: icon + temp + day label etc.
+- [] Test key breakpoints: mobile portrait, tablet, desktop.
+- [] Add hover/focus states for interactive elements (buttons, search input) — the challenge spec mentions it.
+
+**Phase 3: Data & interactivity**
+
+- [] Choose and integrate the Open‑Meteo API.
+- [] Write the JS to fetch data when the user enters a location.
+- [] Parse and display: current weather (icon, temp, location), extra metrics (feels like, humidity, wind, precipitation).
+- [] Build the 7-day forecast block, plus hourly forecast section.
+- [] Implement unit switching (Metric ↔ Imperial) for temperature, wind speed, precipitation.
+- [] Add the interactive day selector in hourly forecast (so when you pick a day, it shows that day’s hourly data).
+
+**Phase 4: Polish & nice-to-haves**
+
+- [] Add loading & error states: what if the location isn’t found?
+- [] Fine-tune responsiveness: maybe hide/show elements differently on small screens.
+- [] Accessibility: Keyboard-focus, labels, ARIA where appropriate.
+- [] Code cleanup: modularize JS, meaningful CSS variables, comment where needed.
+- [] Test on different browsers / devices.
+
+**Phase 5: Wrap-up & submission**
+
+- [] Prepare README: what you built, how to run it, what you learned.
+- [] Make sure your submission matches the challenge’s spec (hover states, responsive layout, etc).
+- [] Optional: Commit, push to GitHub, share link, submit.
+- [] Reflect: what would you do differently next time?
+
+### Detailed Checklist
 
 - [] **Hour 0-1:** Set up project folder, HTML skeleton, CSS skeleton (layout only, no styling polish).
 
@@ -72,6 +125,15 @@ I used chatgpt to help me break down my approach into steps to get started!
 - [] **Hour 5-6:** Add unit toggle (metric/imperial) logic and link it to UI conversion.
 - [] **Evening wrap-up:** test responsiveness, try a different location, fix layout quirks.
 
+For my structure, I am first trying a grid and flex approach. I'm using [cssgridgenerator.io](https://cssgridgenerator.io/ "css grid generator") to create my containers. I am creating `<main class="main">` to hold all of my smaller containers. 
+
+I'll put the logo and unit dropdown in the top div (or outside in a semantic header div that's just static/always at the top might work better?)
+
+Then a div spanning the entire container with the H1.
+
+Next a div spanning the entire container with our search bar (+ span icon magnifying glass) and submit button. 
+
+The bottom div will be our large container with all the stuff in it. I think we can break up the sections with more divs and use flex then to assign more granular behaviors for alignment. I'll start with mobile and ensure the sections flow properly and then see how it translates to desktop. At this point I'm unsure if I'll need positioning media queries, but I think grid and flex should work together for this!
 
 ### Built with
 

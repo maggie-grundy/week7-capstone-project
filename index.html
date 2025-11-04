@@ -11,72 +11,154 @@
 </head>
 <body>
 
+<!--Testing grid layout-->
+<main class="weather__container">
+
+  <section class="weather__headerbar">
   <!--Header bar with logo and unit selection dropdown-->
-  <header class="header">
-    <div class="header__logo"><img src="./assets/images/logo.svg" alt="weather icon"></div>
+    <div class="weather__logo">
+      <img src="./assets/images/logo.svg" alt="weather icon">
+    </div>
     
-    <div class="header__units">
-      <select name="unitDropdown">
+    <div class="weather__units">
+      <!--Hidden label for accessibility-->
+      <label for="myWeatherDropdown" class="visually-hidden">Select units</label>
+      <select id="myWeatherDropdown" name="weatherDropdown">
+        <!--Using a disabled selected option value below to make a settings gear
+        and Units appear like a label but not able to be selected-->
+        <option value="" disabled selected>&#x2699; Units</option>
         <option value="imperial">Imperial</option>
         <option value="metric">Metric</option>
       </select>
     </div>
+  </section>
+    
+  <section class="weather__lookup">
 
-  </header>
+    <header class="weather__title">
+      <h1 id="weather__h1">How's the sky looking today?</h1>
+    </header>
+   
+    <form class="weather__lookup" id="weatherForm">
+    <div class="weather__input">
+      <span id="weather__searchicon"><img src="./assets/images/icon-search.svg" alt=""></span>
+      <input 
+        type="text"
+        id="search"
+        name="search"
+        placeholder="Search for a place..."
+        minlength="1"
+        maxlength="30"
+        required
+      />
+    </div>
 
-  <main class="main__container">
+    <div class="weather__submit">
+      <button 
+        type="submit" 
+        id="weatherButton">
+        Search
+      </button>
+    </div>
 
+  </form>
+  </section>
+  <!--Including aria below so screen readers announce new weather data when it populates-->
+  <section class="weather__resultscontainer" aria-live="polite">
 
+    <div id="weather__results">
+      <h2><!--Populate City Name--></h2>
+      <p><!--Populate current date--></p>
 
-  Units
+      <!--Populate weather icon-->
+      <img src="./assets/images/x" alt="x">
+      <!--Populate large font temp-->
+    </div>
 
-  Switch to Imperial/Metric
+    <div class="weather__feelslike">
+      <p>Feels Like</p>
+    </div>
 
-  Temperature
+    <div class="weather__humidity">
+      <p>Humidity</p>
+    </div>
 
-  Celsius (°C)
-  Fahrenheit (°F)
+    <div class="weather__wind">
+      <p>Wind</p>
+    </div>
 
-  Wind Speed
+    <div class="weather__precipitation">
+      <p>Precipitation</p>
+    </div>
 
-  km/h
-  mph
+    <div class="weather__dailyforecast" aria-label="daily forecast">
+      <div class="weather__dailyforecast-title"></div>
+        <h2>Daily Forecast</h2>
+      </div>
+    
+    <!--Empty container for dynamically generated days-->
+    <div id="weather__dayscontainer"></div>
+    <!--Trying template class for dynamic population-->
 
-  Precipitation
+      <div class="weather__day1">
+        <!--Populate current day-->
+      </div>
 
-  Millimeters (mm)
-  Inches (in)
+      <div class="weather__day2">
+        <!--Populate day 2-->
+      </div>
 
-  How's the sky looking today?
+      <div class="weather__day3">
+        <!--Populate day 3-->
+      </div>
 
-  Search for a city, e.g., New York
-  Search
+      <div class="weather__day4">
+        <!--Populate day 4-->
+      </div>
 
-  Feels like
-  <!-- Insert temperature here -->
+      <div class="weather__day5">
+        <!--Populate day 5-->
+      </div>
 
-  Humidity
-  <!-- Insert humidity here -->
+      <div class="weather__day6">
+        <!--Populate day 6-->
+      </div>
 
-  Wind
-  <!-- Insert wind here -->   
+      <div class="weather__day7">
+        <!--Populate day 7-->
+      </div>
+    </div>
+  </section>
+ 
+  <section class="weather__hourlyforecast">
+    <div class="weather__hourlyforecast-title">
+      <h2>Hourly forecast</h2>
+    </div>
+    <div class="weather__hourlyforecast-dropdown">
+      <select id="myWeatherDropdownDay" name="weatherDropdownDay">
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+        <option value="sunday">Sunday</option>
+    </div>
+
+    <template class="weather__hourlycontainer">
+      <div class="weather__hour"></div>
+        <p class="weather__hour-time"></p>
+        <img class="weather__hour-icon" src="" alt="">
+        <p class="weather__hour-temp"></p>
+    </template>
+  </section>
   
-  Precipitation
-  <!-- Insert precipitation here -->
+</main>
 
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
-
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
-
-  </main>
-
-
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">M G</a>.
-  </div>
+  </footer>
 </body>
 
 <script src="./scripts/main.js"></script>
