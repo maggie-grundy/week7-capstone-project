@@ -17,10 +17,10 @@
   <body>
     <!--Testing grid layout-->
     <main class="weather__container">
-      <section class="weather__headerbar">
+      <header class="weather__headerbar">
         <!--Header bar with logo and unit selection dropdown-->
         <div class="weather__logo">
-          <img src="" alt="weather icon" aria-hidden="true" />
+          <img src="./assets/images/logo.svg" alt="weather now logo" />
         </div>
 
         <div class="weather__units">
@@ -36,12 +36,12 @@
             <option value="metric">Metric</option>
           </select>
         </div>
-      </section>
+      </header>
 
       <section class="weather__lookup">
-        <header class="weather__title">
-          <h1 id="weather__h1">How's the sky looking today?</h1>
-        </header>
+        <div class="weather__title">
+          <h1 class="weather__heading">How's the sky looking today?</h1>
+        </div>
 
         <form class="weather__form" id="weatherForm">
           <div class="weather__input">
@@ -73,23 +73,43 @@
       <!--Including aria below so screen readers announce new weather data when it populates-->
       <section class="weather__resultscontainer" aria-live="polite">
         <div id="weather__results">
-          <h2><!--Populate City Name--></h2>
-          <p><!--Populate current date--></p>
+          <h2 class="weather__results-title" id="resultsCity">
+            <!--Populate City Name-->
+          </h2>
+          <p class="weather__results-date" id="resultsDate">
+            <!--Populate current date-->
+          </p>
 
           <!--Populate weather icon-->
-          <img src="" alt="" />
-          <p class="weather__temp"></p>
-          <!--Populate large font temp-->
+          <img src="" id="resultsIcon" alt="" />
+
+          <p class="weather__results-temp" id="resultsTemp">
+            <!--Populate large font temp-->
+          </p>
         </div>
 
-        <div class="weather__feelslike"><p>Feels Like</p></div>
-        <div class="weather__humidity"><p>Humidity</p></div>
-        <div class="weather__wind"><p>Wind</p></div>
-        <div class="weather__precipitation"><p>Precipitation</p></div>
+        <div class="weather__feelslike">
+          <p class="weather__feelslike-label">Feels Like</p>
+          <p class="weather__results-value" id="feelslikeValue">
+            <!--JS here-->
+          </p>
+        </div>
+        <div class="weather__humidity">
+          <p class="weather__humidity-label">Humidity</p>
+          <p class="weather__results-value" id="humidityValue"></p>
+        </div>
+        <div class="weather__wind">
+          <p class="weather__results-value" id="humidityValue">Wind</p>
+        </div>
+        <div class="weather__precipitation">
+          <p class="weather__results-value" id="precipitationValue">
+            Precipitation
+          </p>
+        </div>
       </section>
 
       <section class="weather__dailyforecast" aria-label="daily forecast">
-        <h2>Daily Forecast</h2>
+        <h2 class="weather__dailyforecast-heading">Daily Forecast</h2>
 
         <!--Empty container for dynamically generated days-->
         <div id="weather__dayscontainer"></div>
@@ -106,7 +126,7 @@
       </section>
 
       <section class="weather__hourlyforecast" aria-label="hourly forecast">
-        <h2>Hourly forecast</h2>
+        <h2 class="weather__hourlyforecast-heading">Hourly forecast</h2>
 
         <div class="weather__hourlyforecast-dropdown">
           <select id="myWeatherDropdownDay" name="weatherDropdownDay">

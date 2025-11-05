@@ -62,6 +62,95 @@ I often think of little things to do while I'm going through a big project and b
 
 - [] Check how to get the magnifying glass icon image inside of the input field itself. I think a span would work maybe? I know we did this in an earlier project (mortgage calculator) or something similar with those input fields so check that first.
 
+I'm unsure how I want to dynamically update my JS sections. For now I've set up 2 approaches - one like this where I can target the ID:
+
+```
+<section class="weather__resultscontainer" aria-live="polite">
+        <div id="weather__results">
+          <h2 class="weather__results-title" id="resultsCity">
+            <!--Populate City Name-->
+          </h2>
+          <p class="weather__results-date" id="resultsDate">
+            <!--Populate current date-->
+          </p>
+
+          <!--Populate weather icon-->
+          <img src="" id="resultsIcon" alt="" />
+
+          <p class="weather__results-temp" id="resultsTemp">
+            <!--Populate large font temp-->
+          </p>
+        </div>
+
+        <div class="weather__feelslike">
+          <p class="weather__feelslike-label">Feels Like</p>
+          <p class="weather__results-value" id="feelslikeValue">
+            <!--JS here-->
+          </p>
+        </div>
+        <div class="weather__humidity">
+          <p class="weather__humidity-label">Humidity</p>
+          <p class="weather__results-value" id="humidityValue"></p>
+        </div>
+        <div class="weather__wind">
+          <p class="weather__results-value" id="humidityValue">Wind</p>
+        </div>
+        <div class="weather__precipitation">
+          <p class="weather__results-value" id="precipitationValue">
+            Precipitation
+          </p>
+        </div>
+      </section>
+
+```
+
+And then for this section I'm trying something I just learned a bit about, the `<template>` semantic tag. I'm not totally sure how it works yet! I will move down my app design until I get to the Daily Forecast and Hourly Forecast sections and test `<template>` when I get there.
+
+```
+<section class="weather__dailyforecast" aria-label="daily forecast">
+        <h2 class="weather__dailyforecast-heading">Daily Forecast</h2>
+
+        <!--Empty container for dynamically generated days-->
+        <div id="weather__dayscontainer"></div>
+
+        <!--Trying template class for dynamic population-->
+        <template id="weather__day-template">
+          <article class="weather__day">
+            <p class="weather__day-name"></p>
+            <img class="weather__day-icon" src="" alt="Weather icon" />
+            <p class="weather__day-temp-high"></p>
+            <p class="weather__day-temp-low"></p>
+          </article>
+        </template>
+      </section>
+
+      <section class="weather__hourlyforecast" aria-label="hourly forecast">
+        <h2 class="weather__hourlyforecast-heading">Hourly forecast</h2>
+
+        <div class="weather__hourlyforecast-dropdown">
+          <select id="myWeatherDropdownDay" name="weatherDropdownDay">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+        </div>
+
+        <div id="weather__hourscontainer"></div>
+
+        <template id="weather__hour-template">
+          <article class="weather__hour">
+            <p class="weather__hour-time"></p>
+            <img class="weather__hour-icon" src="" alt="" />
+            <p class="weather__hour-temp"></p>
+          </article>
+        </template>
+      </section>
+```
+
 ### Broad Checklist
 
 **Phase 1: Setup & Skeleton**
@@ -69,7 +158,7 @@ I often think of little things to do while I'm going through a big project and b
 - [X] Create your project folder & version control (git) so you track changes.
 - [X] Set up basic HTML structure: main container, header, search bar, results area, forecast area, etc.
 
-- [] Write the CSS skeleton: define your grid / sections layout (for desktop & mobile). Use a display: grid (or flex) for the main layout, then inside each card use display: flex as you mentioned.
+- [] Write the CSS skeleton: define your grid / sections layout (for desktop & mobile). Use a display: grid (or flex) for the main layout, then inside each card use display: flex.
 - [] Add class names for the major blocks (search, current weather, metrics, forecast cards).
 
 - [X] Set up a CSS reset / base styles so browser differences don’t trip you up.
@@ -125,13 +214,13 @@ I often think of little things to do while I'm going through a big project and b
 - [] **Hour 5-6:** Add unit toggle (metric/imperial) logic and link it to UI conversion.
 - [] **Evening wrap-up:** test responsiveness, try a different location, fix layout quirks.
 
-For my structure, I am first trying a grid and flex approach. I'm using [cssgridgenerator.io](https://cssgridgenerator.io/ "css grid generator") to create my containers. I am creating `<main class="main">` to hold all of my smaller containers. 
+For my structure, I am first trying a grid and flex approach. I'm using [cssgridgenerator.io](https://cssgridgenerator.io/ "css grid generator") to create my containers. I am creating `<main class="main">` to hold all of my smaller containers.
 
 I'll put the logo and unit dropdown in the top div (or outside in a semantic header div that's just static/always at the top might work better?)
 
 Then a div spanning the entire container with the H1.
 
-Next a div spanning the entire container with our search bar (+ span icon magnifying glass) and submit button. 
+Next a div spanning the entire container with our search bar (+ span icon magnifying glass) and submit button.
 
 The bottom div will be our large container with all the stuff in it. I think we can break up the sections with more divs and use flex then to assign more granular behaviors for alignment. I'll start with mobile and ensure the sections flow properly and then see how it translates to desktop. At this point I'm unsure if I'll need positioning media queries, but I think grid and flex should work together for this!
 

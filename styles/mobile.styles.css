@@ -27,7 +27,11 @@ body {
 }
 
 body {
-  background-color: var(--color-blue-700);
+  background-color: rgb(5, 5, 41);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  gap: 1.5rem;
 }
 
 /* Aria hiding */
@@ -49,10 +53,17 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: auto;
   gap: 8px;
+  max-width: 100%;
+  padding: 2rem;
+  max-width: 1440px;
+  min-width: 375px;
 }
 
 .weather__headerbar {
   grid-column: span 5 / span 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .weather__lookup {
@@ -71,8 +82,47 @@ body {
   grid-row-start: 4;
 }
 
+.weather__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Flex behaviors/layout */
+
+.weather__logo > img {
+  width: 70%;
+}
+
+.weather__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: var(--color-neutral-0);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 2rem;
+}
+
+.weather__units {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+
+.weather__form {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+
+
+
 /*Media queries for desktop will go down here 
 unless I need to use 2 css files */
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
   /*bigger screen adjustments here */
 }
+
