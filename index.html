@@ -45,7 +45,7 @@
 
         <form class="weather__form" id="weatherForm">
           <div class="weather__input">
-            <span id="weather__searchicon"
+            <span class="input__prefix"
               ><img
                 src="./assets/images/icon-search.svg"
                 alt=""
@@ -53,6 +53,7 @@
             /></span>
             <input
               type="text"
+              class="weather__input-control"
               id="search"
               name="search"
               placeholder="Search for a place..."
@@ -60,13 +61,20 @@
               maxlength="30"
               required
             />
+            <p class="input__error"></p>
           </div>
 
           <div class="weather__submit">
             <label for="search" class="visually-hidden"
               >Search for a place</label
             >
-            <button type="submit" id="weatherButton">Search</button>
+            <button
+              type="submit"
+              class="weather__submitbutton"
+              id="weatherButton"
+            >
+              Search
+            </button>
           </div>
         </form>
       </section>
@@ -86,29 +94,31 @@
           <p class="weather__results-temp" id="resultsTemp">
             <!--Populate large font temp-->
           </p>
-        </div>
+        </section>
 
-        <div class="weather__feelslike">
-          <p class="weather__feelslike-label">Feels Like</p>
-          <p class="weather__results-value" id="feelslikeValue">
-            <!--JS here-->
-          </p>
-        </div>
-        <div class="weather__humidity">
-          <p class="weather__humidity-label">Humidity</p>
-          <p class="weather__results-value" id="humidityValue"></p>
-        </div>
-        <div class="weather__wind">
-          <p class="weather__results-value" id="humidityValue">Wind</p>
-        </div>
-        <div class="weather__precipitation">
-          <p class="weather__results-value" id="precipitationValue">
-            Precipitation
-          </p>
+        <section class="weather__specificscontainer">
+          <div class="weather__feelslike">
+            <p class="weather__feelslike-label">Feels Like</p>
+            <p class="weather__results-value" id="feelslikeValue">
+              <!--JS here-->
+            </p>
+          </div>
+          <div class="weather__humidity">
+            <p class="weather__humidity-label">Humidity</p>
+            <p class="weather__results-value" id="humidityValue"></p>
+          </div>
+          <div class="weather__wind">
+            <p class="weather__results-value" id="humidityValue">Wind</p>
+          </div>
+          <div class="weather__precipitation">
+            <p class="weather__results-value" id="precipitationValue">
+              Precipitation
+            </p>
+          </div>
         </div>
       </section>
 
-      <section class="weather__dailyforecast" aria-label="daily forecast">
+      <section class="weather__dailycontainer" aria-label="daily forecast">
         <h2 class="weather__dailyforecast-heading">Daily Forecast</h2>
 
         <!--Empty container for dynamically generated days-->
@@ -125,7 +135,7 @@
         </template>
       </section>
 
-      <section class="weather__hourlyforecast" aria-label="hourly forecast">
+      <section class="weather__hourlycontainer" aria-label="hourly forecast">
         <h2 class="weather__hourlyforecast-heading">Hourly forecast</h2>
 
         <div class="weather__hourlyforecast-dropdown">

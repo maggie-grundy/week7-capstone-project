@@ -60,7 +60,8 @@ I used chatgpt to help me break down my approach into steps to get started! I tr
 
 I often think of little things to do while I'm going through a big project and because I tend to forget things quickly, I'll jump right to doing the thing and then forget what I was working on before or lose momentum. So here I'm going to try making myself a small section with a checklist to place things like this that I want to do or look up later!
 
-- [] Check how to get the magnifying glass icon image inside of the input field itself. I think a span would work maybe? I know we did this in an earlier project (mortgage calculator) or something similar with those input fields so check that first.
+- [X] Check how to get the magnifying glass icon image inside of the input field itself. I think a span would work maybe? I know we did this in an earlier project (mortgage calculator) or something similar with those input fields so check that first. (Confirmed it's span with css positioning - made input__prefix)
+- [X] Add empty `<p>` for `.input__error`
 
 I'm unsure how I want to dynamically update my JS sections. For now I've set up 2 approaches - one like this where I can target the ID:
 
@@ -151,21 +152,21 @@ And then for this section I'm trying something I just learned a bit about, the `
       </section>
 ```
 
+I realized while working through my positioning & styling that the first results section and feels like/humidity/wind/precipitation containers were mixed together. So I solved this by wrapping that second section in a separate div and reworked my css grid layout.
+
 ### Broad Checklist
 
 **Phase 1: Setup & Skeleton**
 
 - [X] Create your project folder & version control (git) so you track changes.
 - [X] Set up basic HTML structure: main container, header, search bar, results area, forecast area, etc.
-
-- [] Write the CSS skeleton: define your grid / sections layout (for desktop & mobile). Use a display: grid (or flex) for the main layout, then inside each card use display: flex.
-- [] Add class names for the major blocks (search, current weather, metrics, forecast cards).
-
+- [X] Write the CSS skeleton: define your grid / sections layout (for desktop & mobile). Use a display: grid (or flex) for the main layout, then inside each card use display: flex.
+- [X] Add class names for the major blocks (search, current weather, metrics, forecast cards).
 - [X] Set up a CSS reset / base styles so browser differences don’t trip you up.
 
 **Phase 2: Responsive layout & styling**
 
-- [] Build the mobile git version first (often easiest) — get the sections stacking nicely, typography sizes, spacing.
+- [] Build the mobile version first — get the sections stacking nicely, typography sizes, spacing.
 - [] Then work desktop-layout: e.g., maybe sidebar + main section, or split layout.
 - [] Define your grid for the cards/forecast area: maybe a 7-day forecast grid.
 - [] Use flex in cards: icon + temp + day label etc.

@@ -27,10 +27,13 @@ body {
 }
 
 body {
-  background-color: rgb(5, 5, 41);
-  margin: 0;
-  padding: 0;
+  background-color: var(--color-neutral-900);
   width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0;
   gap: 1.5rem;
 }
 
@@ -52,7 +55,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: auto;
-  gap: 8px;
+  gap: 5px;
   max-width: 100%;
   padding: 2rem;
   max-width: 1440px;
@@ -83,6 +86,8 @@ body {
 }
 
 .weather__day {
+  grid-column: span 5/ span5;
+  grid-row-start: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,9 +103,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  text-align: center;
   color: var(--color-neutral-0);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 2rem;
+  font-size: 2.7rem;
 }
 
 .weather__units {
@@ -110,15 +116,83 @@ body {
 }
 
 
-.weather__form {
+/*Positioning and Styling for top section */
+
+.weather__input {
+  position: relative;
+  border: none;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+  background-color: var(--color-neutral-800);
+  padding: 0.8rem;
+  margin-bottom: 1rem;
 }
 
+.input__prefix {
+display: flex;
+align-items: center;
+padding: 1rem;
 
+}
 
+.input__prefix > img {
+  width: 90%;
+}
+
+.weather__input-control {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  font-family: "DM Sans", sans-serif;
+  color: var(--color-neutral-0); 
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+
+.weather__input-control::placeholder {
+  color: var(--color-neutral-0);
+  opacity: 1; 
+}
+
+.weather__submitbutton {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 1.2rem;
+  color: var(--color-neutral-200);
+  background-color: var(--color-blue-500);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 00;
+  font-style: normal;
+  font-size: 1.6rem;
+  /* letter-spacing: 0.8px; */
+  color: var(--color-neutral-0);
+}
+
+.weather__resultscontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  background-image: url(/assets/images/bg-today-small.svg);
+  margin-top: 2rem;
+  border-radius: 1rem;
+  gap: 5rem;
+  min-height: 200px;
+  
+}
+
+.weather__specificscontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
 
 /*Media queries for desktop will go down here 
 unless I need to use 2 css files */
