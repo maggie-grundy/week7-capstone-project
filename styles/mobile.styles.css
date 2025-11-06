@@ -109,7 +109,24 @@ body {
 }
 
 .weather__specificscontainer > div {
-  
+  background-color: var(--color-neutral-800);
+  border-radius: 1rem;
+  padding: 4rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.3rem;
+  color: var(--color-neutral-0);
+  min-height: 100px;
+}
+
+.weather__specificscontainer > p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8rem;
+  color: var(--color-neutral-0);
+  display: flex;
+  justify-content: flex-start;
 }
 
 .weather__dailycontainer,
@@ -122,6 +139,30 @@ body {
 }
 
 
+.weather__dailycontainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+  color: var(--color-neutral-0);
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+
+}
+
+.weather__hourlycontainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 1.5rem;
+  max-width: 375px;
+  color: var(--color-neutral-0);
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  background-color: var(--color-neutral-800);
+  border-radius: 1.5rem;
+}
 /*Flex behaviors/layout */
 
 .weather__logo > img {
@@ -205,42 +246,7 @@ padding: 1rem;
 }
 
 
-/* Might not need these
-.weather__feelslike {
-  background-color: var(--color-neutral-800);
- 
-}
 
-.weather__humidity {
-  background-color: var(--color-neutral-800);
-
-}
-
-.weather__wind {
-  background-color: var(--color-neutral-800);
-
-}
-
-.weather__precipitation {
-  background-color: var(--color-neutral-800);
-
-} */
-
-.weather__dailycontainer{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-   width: 100%;
-}
-
-.weather__hourlycontainer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-   width: 100%;
-}
 /*Media queries for desktop will go down here 
 unless I need to use 2 css files */
 @media (min-width: 1440px) {
