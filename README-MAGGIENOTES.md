@@ -166,12 +166,26 @@ I realized while working through my positioning & styling that the first results
 - [ ] *Add something with ` <pre>` tag!
 - [ ] **Don't need to include daily & hourly section!**
 
+
+
+# - [ ] ***Cross-reference rubric with my checklist***
+
+
+
+
+
 **Phase 2: Responsive layout & styling**
 
-- [] Build the mobile version first — get the sections stacking nicely, typography sizes, spacing.
+- [X] Build the mobile version first — get the sections stacking nicely, typography sizes, spacing.
+- [ ] DON'T FORGET ERROR STATES
+  - [ ] including 404 api error state
+  - [ ] Output div for error message? (not in the spec I don't think but could use for pre example text ?)
+
 - [] Then work desktop-layout: e.g., maybe sidebar + main section, or split layout.
 - [] Define your grid for the cards/forecast area: maybe a 7-day forecast grid.
-- [] Use flex in cards: icon + temp + day label etc.
+
+- [X] Use flex in cards: icon + temp + day label etc.
+
 - [] Test key breakpoints: mobile portrait, tablet, desktop.
 - [] Add hover/focus states for interactive elements (buttons, search input) — the challenge spec mentions it.
 

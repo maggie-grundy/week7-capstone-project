@@ -96,41 +96,44 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   position: relative;
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem; */
   max-width: 375px;
   width: 100%;
   gap: 1.5rem;
-
 }
 
 .weather__specificscontainer > div {
   background-color: var(--color-neutral-800);
   border-radius: 1rem;
-  border-width: 0.2px;
-  border-color: var(--color-neutral-700);
+  border-width: 0.5px;
+  border-color: var(--color-neutral-600);
   border-style: ridge;
-  padding: 1.5rem;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: space-around;
   font-family: "DM Sans", sans-serif;
   font-size: 1.3rem;
   font-weight: 500;
   color: var(--color-neutral-300);
   min-height: 100px;
+  height: 100px;
+  
 }
 
-.weather__specificscontainer > p {
+.weather__specifics-label {
+  margin-left: 2rem;
+  margin-bottom: 0;
+}
+
+.weather__specifics-value {
   font-family: "DM Sans", sans-serif;
-  font-size: 8rem;
-  color: var(--color-neutral-0);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--color-neutral-200);
   display: flex;
   justify-content: flex-start;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  
 }
 
 .weather__dailycontainer,
