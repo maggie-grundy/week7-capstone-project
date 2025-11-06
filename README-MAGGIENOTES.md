@@ -163,6 +163,8 @@ I realized while working through my positioning & styling that the first results
 - [X] Write the CSS skeleton: define your grid / sections layout (for desktop & mobile). Use a display: grid (or flex) for the main layout, then inside each card use display: flex.
 - [X] Add class names for the major blocks (search, current weather, metrics, forecast cards).
 - [X] Set up a CSS reset / base styles so browser differences don’t trip you up.
+- [ ] *Add something with ` <pre>` tag!
+- [ ] **Don't need to include daily & hourly section!**
 
 **Phase 2: Responsive layout & styling**
 
