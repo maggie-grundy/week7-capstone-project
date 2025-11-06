@@ -74,23 +74,21 @@ body {
 }
 
 .weather__resultscontainer {
-  display: grid;
-  grid-template-columns: 1fr;
-  
-
-}
-
-.weather__results {
+  width: 100%;
+  height: 200px;
+  background-image: url(/assets/images/bg-today-small.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(/assets/images/bg-today-small.svg);
-  margin-top: 2rem;
-  border-radius: 1rem;
-  gap: 5rem;
-  width: 100%;
-  
+  gap: 2rem; 
+
 }
 
 .weather__specificscontainer {
@@ -98,26 +96,32 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   position: relative;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 2rem; */
   max-width: 375px;
   width: 100%;
+  gap: 1.5rem;
+
 }
 
 .weather__specificscontainer > div {
   background-color: var(--color-neutral-800);
   border-radius: 1rem;
-  padding: 4rem;
+  border-width: 0.2px;
+  border-color: var(--color-neutral-700);
+  border-style: ridge;
+  padding: 1.5rem;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   font-family: "DM Sans", sans-serif;
   font-size: 1.3rem;
-  color: var(--color-neutral-0);
+  font-weight: 500;
+  color: var(--color-neutral-300);
   min-height: 100px;
 }
 
@@ -220,13 +224,14 @@ padding: 1rem;
   font-family: "DM Sans", sans-serif;
   color: var(--color-neutral-0); 
   font-family: "DM Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
   font-size: 1.6rem;
 }
 
 .weather__input-control::placeholder {
-  color: var(--color-neutral-0);
+  color: var(--color-neutral-300);
+  font-weight: 500;
   opacity: 1; 
 }
 
@@ -234,11 +239,11 @@ padding: 1rem;
   width: 100%;
   padding: 1rem;
   border: none;
-  border-radius: 1.2rem;
+  border-radius: 1.1rem;
   color: var(--color-neutral-200);
   background-color: var(--color-blue-500);
   font-family: "DM Sans", sans-serif;
-  font-weight: 00;
+  font-weight: 500;
   font-style: normal;
   font-size: 1.6rem;
   /* letter-spacing: 0.8px; */
