@@ -165,6 +165,8 @@ I realized while working through my positioning & styling that the first results
 - [X] Set up a CSS reset / base styles so browser differences don’t trip you up.
 - [ ] *Add something with ` <pre>` tag!
 - [ ] **Don't need to include daily & hourly section!**
+- [X] figure out overlay in results background
+- [ ] figure out gear icon in units dropdown (isn't quite right)
 
 
 

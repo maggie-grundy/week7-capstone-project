@@ -28,7 +28,7 @@
           <label for="myWeatherDropdown" class="visually-hidden"
             >Select units</label
           >
-          <select id="myWeatherDropdown" name="weatherDropdown">
+          <select id="myWeatherDropdown"  class="weather__units-dropdown" name="weatherDropdown">
             <!--Using a disabled selected option value below to make a settings gear
         and Units appear like a label but not able to be selected-->
             <option value="" disabled selected>&#x2699; Units</option>
@@ -79,41 +79,53 @@
         </form>
       </section>
       <!--Including aria below so screen readers announce new weather data when it populates-->
-      <section class="weather__resultscontainer" id="weatherResults" aria-live="polite">
-          <h2 class="weather__results-title" id="resultsCity">
-            <!--Populate City Name-->
-          </h2>
-          <p class="weather__results-date" id="resultsDate">
-            Tuesday, Ag 5, 2025<!--Populate current date-->
+      <section
+        class="weather__resultscontainer"
+        id="weatherResults"
+        aria-live="polite"
+      >
+        <h2 class="weather__results-title" id="resultsCity">
+          <!--Populate City Name-->Berlin, Germany
+        </h2>
+        <p class="weather__results-date" id="resultsDate">
+          Tuesday, Ag 5, 2025<!--Populate current date-->
+        </p>
+
+        <!--Wrapping these two together to display side-by-side-->
+        <article class="weather__resultsbottom-wrapper">
+        <!--Populate weather icon-->
+        <img
+          src="/assets/images/icon-sunny.webp"
+          width="30%"
+          id="resultsIcon"
+          alt=""
+        />
+
+        <p class="weather__results-temp" id="resultsTemp">
+          <!--Populate large font temp-->68
+        </p>
+      </article>
+      </section>
+
+      <section class="weather__specificscontainer">
+        <div class="weather__feelslike">
+          <p class="weather__specifics-label">Feels Like</p>
+          <p class="weather__specifics-value" id="feelslikeValue">
+            <!--JS here-->64*
           </p>
+        </div>
+        <div class="weather__humidity">
+          <p class="weather__specifics-label">Humidity</p>
+          <p class="weather__specifics-value" id="humidityValue">46%</p>
+        </div>
 
-          <!--Populate weather icon-->
-          <img src="" id="resultsIcon" alt="" />
-
-          <p class="weather__results-temp" id="resultsTemp">
-            <!--Populate large font temp-->
-          </p>
-        </section>
-
-        <section class="weather__specificscontainer">
-          <div class="weather__feelslike">
-            <p class="weather__specifics-label">Feels Like</p>
-            <p class="weather__specifics-value" id="feelslikeValue">
-              <!--JS here-->64*
-            </p>
-          </div>
-          <div class="weather__humidity">
-            <p class="weather__specifics-label">Humidity</p>
-            <p class="weather__specifics-value" id="humidityValue">46%</p>
-          </div>
-          <div class="weather__wind">
-            <p class="weather__specifics-label">Wind</p>
-            <p class="weather__specifics-value" id="humidityValue">9 mph</p>
-          </div>
-          <div class="weather__precipitation">
-            <p class="weather__specifics-label">Precipitation</p>
-            <p class="weather__specifics-value" id="precipitationValue">0 in</p>
-          </div>
+        <div class="weather__wind">
+          <p class="weather__specifics-label">Wind</p>
+          <p class="weather__specifics-value" id="humidityValue">9 mph</p>
+        </div>
+        <div class="weather__precipitation">
+          <p class="weather__specifics-label">Precipitation</p>
+          <p class="weather__specifics-value" id="precipitationValue">0 in</p>
         </div>
       </section>
 
@@ -135,8 +147,8 @@
       </section>
 
       <section class="weather__hourlycontainer" aria-label="hourly forecast">
-        <h2 class="weather__hourlyforecast-heading">Hourly forecast **
-          put pre tag dummy text here?!!**
+        <h2 class="weather__hourlyforecast-heading">
+          Hourly forecast ** put pre tag dummy text here?!!**
         </h2>
 
         <div class="weather__hourlyforecast-dropdown">

@@ -55,7 +55,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto, 1fr);
   grid-auto-rows: auto;
-  gap: 5px;
+  gap: 2px;
   max-width: 100%;
   padding: 2rem;
   max-width: 1440px;
@@ -75,20 +75,69 @@ body {
 
 .weather__resultscontainer {
   width: 100%;
-  height: 200px;
   background-image: url(/assets/images/bg-today-small.svg);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2rem; 
+  justify-content: flex-start;
+  overflow: hidden;
+  gap: 1rem;
+  padding: 2rem;
+  position: relative;
+  height: auto;
+  /* isolation: isolate; */
+}
 
+/*Code I looked up to try blurring the background image */
+.weather__resultscontainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(2px); /* adds soft blur over flecks */
+  z-index: 0;
+}
+
+/* Make sure your content sits above it */
+.weather__resultscontainer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.weather__results-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-neutral-0);
+  margin: 0;
+}
+
+.weather__results-date {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5rem;
+  color: var(--color-neutral-200);
+  margin: 0;
+}
+
+.weather__results-temp {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-style: italic;
+  font-size: 8rem;
+  color: var(--color-neutral-0);
+  margin: 0;
+}
+
+.weather__resultsbottom-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .weather__specificscontainer {
@@ -194,6 +243,17 @@ body {
 
 
 /*Positioning and Styling for top section */
+
+.weather__units-dropdown {
+  background-color: var(--color-neutral-700);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--color-neutral-0);
+  padding: 0.5rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  font-size: 1.3rem;
+}
 
 .weather__input {
   position: relative;
