@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles/mobile.styles.css" />
+    <title>Frontend Mentor | Weather app</title>
+  </head>
+  <body>
+    <!--Testing grid layout-->
+    <main class="weather__container">
+      <header class="weather__headerbar">
+        <!--Header bar with logo and unit selection dropdown-->
+        <div class="weather__logo">
+          <img src="./assets/images/logo.svg" alt="weather now logo" />
+        </div>
+
+        <div class="weather__units">
+          <!--Hidden label for accessibility-->
+          <label for="myWeatherDropdown" class="visually-hidden"
+            >Select units</label
+          >
+          <select id="myWeatherDropdown"  class="weather__units-dropdown" name="weatherDropdown">
+            <!--Using a disabled selected option value below to make a settings gear
+        and Units appear like a label but not able to be selected-->
+            <option value="" disabled selected>&#x2699; Units</option>
+            <option value="imperial">Imperial (°F, mph)</option>
+            <option value="metric">Metric (°C, km/h)</option>
+          </select>
+        </div>
+      </header>
+
+      <div class="error" id="errorDiv"></div>
+
+      <section class="weather__lookup">
+        <div class="weather__title">
+          <h1 class="weather__heading">How's the sky looking today?</h1>
+        </div>
+
+        <form class="weather__form" id="weatherForm">
+          <div class="weather__input">
+            <span class="input__prefix"
+              ><img
+                src="./assets/images/icon-search.svg"
+                alt=""
+                aria-hidden="true"
+            /></span>
+            <input
+              type="text"
+              class="weather__input-control"
+              id="searchLocation"
+              name="search"
+              placeholder="Search for a place..."
+              minlength="1"
+              maxlength="30"
+            />
+            <p class="input__error"></p>
+          </div>
+
+          <div class="weather__submit">
+            <label for="search" class="visually-hidden"
+              >Search for a place</label
+            >
+            
+            <button
+              type="submit"
+              class="weather__submitbutton"
+              id="weatherButton"
+            >
+              Search
+            </button>
+          </div>
+        </form>
+      </section>
+      <!--Including aria below so screen readers announce new weather data when it populates-->
+      <section
+        class="weather__resultscontainer"
+        id="weatherResults"
+        aria-live="polite"
+      >
+        <h2 class="weather__results-title" id="resultsLocation">
+          <!--Populate City Name-->
+        </h2>
+        <p class="weather__results-date" id="resultsDate">
+          <!--Populate current date-->
+        </p>
+
+        <!--Wrapping these two together to display side-by-side-->
+        <article class="weather__resultsbottom-wrapper">
+        <!--Populate weather icon-->
+        <img
+          src=""
+          width="30%"
+          id="resultsIcon"
+          alt=""
+          style="display: none"
+        />
+
+        <p class="weather__results-temp" id="resultsTemp">
+          <!--Populate large font temp-->
+        </p>
+      </article>
+      </section>
+
+      <section class="weather__specificscontainer">
+        <div class="weather__feelslike">
+          <p class="weather__specifics-label">Feels Like</p>
+          <p class="weather__specifics-value" id="feelslikeValue">
+            <!--JS here-->
+          </p>
+        </div>
+        <div class="weather__humidity">
+          <p class="weather__specifics-label">Humidity</p>
+          <p class="weather__specifics-value" id="humidityValue"></p>
+        </div>
+
+        <div class="weather__wind">
+          <p class="weather__specifics-label">Wind</p>
+          <p class="weather__specifics-value" id="windValue"></p>
+        </div>
+        <div class="weather__precipitation">
+          <p class="weather__specifics-label">Precipitation</p>
+          <p class="weather__specifics-value" id="precipValue"></p>
+        </div>
+      </section>
+
+      <section class="weather__dailycontainer" aria-label="daily forecast">
+        <h2 class="weather__dailyforecast-heading">Daily Forecast</h2>
+
+        <!--Empty container for dynamically generated days-->
+        <div id="weather__dayscontainer"></div>
+
+        <!--Trying template class for dynamic population-->
+        <template id="weather__day-template">
+          <article class="weather__day">
+            <p class="weather__day-name"></p>
+            <img class="weather__day-icon" src="" alt="Weather icon" />
+            <p class="weather__day-temp-high"></p>
+            <p class="weather__day-temp-low"></p>
+          </article>
+        </template>
+      </section>
+
+      <section class="weather__hourlycontainer" aria-label="hourly forecast">
+        <pre>  Hourly forecast      would goo         in here!
+        </pre>
+
+        <div class="weather__hourlyforecast-dropdown">
+          <select id="myWeatherDropdownDay" name="weatherDropdownDay">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+        </div>
+
+        <div id="weather__hourscontainer"></div>
+
+        <template id="weather__hour-template">
+          <article class="weather__hour">
+            <p class="weather__hour-time"></p>
+            <img class="weather__hour-icon" src="" alt="" />
+            <p class="weather__hour-temp"></p>
+          </article>
+        </template>
+      </section>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">M G</a>.
+    </footer>
+
+    <script src="./scripts/main.js" type="module"></script>
+  </body>
+</html>
