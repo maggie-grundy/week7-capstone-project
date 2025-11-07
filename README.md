@@ -227,9 +227,7 @@ The bottom div will be our large container with all the stuff in it. I think we 
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
-### What I learned
-
+- 
 ### Continued development
 
 I think things went a little better this time, even though I didn't get as much working as I would have liked. I felt a lot more comfortable setting everything up and moving through my code. I will continue working on my JavaScript coding and hope to keep improving all around!
