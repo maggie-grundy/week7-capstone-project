@@ -1,32 +1,15 @@
 # Frontend Mentor - Weather app solution
 
-This is a solution to the [Weather app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/weather-app-K1FhddVm49). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
-
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
-## Overview
+Overview
 
 ### The challenge
 
 Users should be able to:
 
-- [] Search for weather information by entering a location in the search bar
-- [] View current weather conditions including temperature, weather icon, and location details
-- [] See additional weather metrics like "feels like" temperature, humidity percentage, wind speed, and precipitation amounts
+- [X] Search for weather information by entering a location in the search bar
+- [X] View current weather conditions including temperature, weather icon, and location details
+- [X] See additional weather metrics like "feels like" temperature, humidity percentage, wind speed, and precipitation amounts
+
 - [] Browse a 7-day weather forecast with daily high/low temperatures and weather icons
 - [] View an hourly forecast showing temperature changes throughout the day
 - [] Switch between different days of the week using the day selector in the hourly forecast section
@@ -34,23 +17,6 @@ Users should be able to:
 - [] Switch between specific temperature units (Celsius and Fahrenheit) and measurement units for wind speed (km/h and mph) and precipitation (millimeters) via the units dropdown
 - [] View the optimal layout for the interface depending on their device's screen size
 - [] See hover and focus states for all interactive elements on the page
-
-### Screenshot
-
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
@@ -154,8 +120,7 @@ And then for this section I'm trying something I just learned a bit about, the `
 
 I realized while working through my positioning & styling that the first results section and feels like/humidity/wind/precipitation containers were mixed together. So I solved this by wrapping that second section in a separate div and reworked my css grid layout.
 
-
-With my JS, I was having issues getting my API request to return an object to my console. Adding encodeURIComponent to the template literal seemed to fix that. In my case, my city name has a space in it, which can make URLs get weird. 
+With my JS, I was having issues getting my API request to return an object to my console. Adding encodeURIComponent to the template literal seemed to fix that. In my case, my city name has a space in it, which can make URLs get weird.
 
 ```
         const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=10&language=en&format=json`);
@@ -171,18 +136,18 @@ With my JS, I was having issues getting my API request to return an object to my
 - [X] Write the CSS skeleton: define your grid / sections layout (for desktop & mobile). Use a display: grid (or flex) for the main layout, then inside each card use display: flex.
 - [X] Add class names for the major blocks (search, current weather, metrics, forecast cards).
 - [X] Set up a CSS reset / base styles so browser differences don’t trip you up.
-- [ ] *Add something with ` <pre>` tag!
+- [X] *Add something with ` <pre>` tag!
 - [ ] **Don't need to include daily & hourly section!**
 - [X] figure out overlay in results background
 - [ ] figure out gear icon in units dropdown (isn't quite right)
-- [ ] fix overflow in p text (specifics cards)
-
-# - [ ] ***Cross-reference rubric with my checklist***
+- [X] fix overflow in p text (specifics cards)
+- [ ] fix alignment (or padding, maybe gap? in specifics cards)
+- [X] ***Cross-reference rubric with my checklist***
 
 **Phase 2: Responsive layout & styling**
 
 - [X] Build the mobile version first — get the sections stacking nicely, typography sizes, spacing.
-- [ ] DON'T FORGET ERROR STATES
+- [ ] DON'T FORGET ERROR STATES (I got them sort of working but not as well as I would like)
 
   - [ ] including 404 api error state
   - [ ] Output div for error message? (not in the spec I don't think but could use for pre example text ?)
@@ -202,19 +167,25 @@ With my JS, I was having issues getting my API request to return an object to my
 - [] Build the 7-day forecast block, plus hourly forecast section. (if time)
 - [] Add the interactive day selector in hourly forecast (so when you pick a day, it shows that day’s hourly data).
 
-**Phase 4: Polish** 
+**Phase 4: Polish**
 
-- [] Add loading & error states: what if the location isn’t found?
+- [X] (some) Add loading & error states: what if the location isn’t found?
+
 - [] Fine-tune responsiveness: maybe hide/show elements differently on small screens.
-- [] Accessibility: Keyboard-focus, labels, ARIA where appropriate.
-- [] Code cleanup: modularize JS, meaningful CSS variables, comment where needed.
+
+- [X] (some) )Accessibility: Keyboard-focus, labels, ARIA where appropriate.
+- [X] (JS could look better, CSS could be more organized) Code cleanup: modularize JS, meaningful CSS variables, comment where needed.
+
 - [] Test on different browsers / devices.
 
 **Phase 5: Wrap-up & submission**
 
-- [] Prepare README: what you built, how to run it, what you learned.
+- [X] Prepare README: what you built, how to run it, what you learned.
+
 - [] Make sure your submission matches the challenge’s spec (hover states, responsive layout, etc).
-- [] Optional: Commit, push to GitHub, share link, submit.
+
+- [X] Optional: Commit, push to GitHub, share link, submit.
+
 - [] Reflect: what would you do differently next time?
 
 ### Detailed Checklist
@@ -232,8 +203,8 @@ With my JS, I was having issues getting my API request to return an object to my
 - [X] **Hour 1-2:** Work on mobile layout: search bar, current weather section, forecast cards stacking.
 - [X] **Hour 2-3:** Desktop layout: grid for forecast cards, sidebar/main differences. Add flex for cards.
 - [X] **Hour 3-4:** Start JS: fetch data for a hard-coded location, display in current weather section.
+- [X] **Hour 4-5:** Hook up search functionality: user input, API call, update UI.
 
-- [] **Hour 4-5:** Hook up search functionality: user input, API call, update UI.
 - [] **Hour 5-6:** Add unit toggle (metric/imperial) logic and link it to UI conversion.
 - [] **wrap-up:** test responsiveness, try a different location, fix layout quirks.
 
@@ -256,53 +227,9 @@ The bottom div will be our large container with all the stuff in it. I think we 
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [Styled Components](https://styled-components.com/) - For styles
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I think things went a little better this time, even though I didn't get as much working as I would have liked. I felt a lot more comfortable setting everything up and moving through my code. I will continue working on my JavaScript coding and hope to keep improving all around!
