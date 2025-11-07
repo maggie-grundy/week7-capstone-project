@@ -32,8 +32,8 @@
             <!--Using a disabled selected option value below to make a settings gear
         and Units appear like a label but not able to be selected-->
             <option value="" disabled selected>&#x2699; Units</option>
-            <option value="imperial">Imperial</option>
-            <option value="metric">Metric</option>
+            <option value="imperial">Imperial (°F, mph)</option>
+            <option value="metric">Metric (°C, km/h)</option>
           </select>
         </div>
       </header>
@@ -54,12 +54,11 @@
             <input
               type="text"
               class="weather__input-control"
-              id="search"
+              id="searchLocation"
               name="search"
               placeholder="Search for a place..."
               minlength="1"
               maxlength="30"
-              required
             />
             <p class="input__error"></p>
           </div>
@@ -68,6 +67,7 @@
             <label for="search" class="visually-hidden"
               >Search for a place</label
             >
+            
             <button
               type="submit"
               class="weather__submitbutton"
@@ -84,25 +84,26 @@
         id="weatherResults"
         aria-live="polite"
       >
-        <h2 class="weather__results-title" id="resultsCity">
-          <!--Populate City Name-->Berlin, Germany
+        <h2 class="weather__results-title" id="resultsLocation">
+          <!--Populate City Name-->
         </h2>
         <p class="weather__results-date" id="resultsDate">
-          Tuesday, Ag 5, 2025<!--Populate current date-->
+          <!--Populate current date-->
         </p>
 
         <!--Wrapping these two together to display side-by-side-->
         <article class="weather__resultsbottom-wrapper">
         <!--Populate weather icon-->
         <img
-          src="/assets/images/icon-sunny.webp"
+          src=""
           width="30%"
           id="resultsIcon"
           alt=""
+          style="display: none"
         />
 
         <p class="weather__results-temp" id="resultsTemp">
-          <!--Populate large font temp-->68
+          <!--Populate large font temp-->
         </p>
       </article>
       </section>
@@ -111,21 +112,21 @@
         <div class="weather__feelslike">
           <p class="weather__specifics-label">Feels Like</p>
           <p class="weather__specifics-value" id="feelslikeValue">
-            <!--JS here-->64*
+            <!--JS here-->
           </p>
         </div>
         <div class="weather__humidity">
           <p class="weather__specifics-label">Humidity</p>
-          <p class="weather__specifics-value" id="humidityValue">46%</p>
+          <p class="weather__specifics-value" id="humidityValue"></p>
         </div>
 
         <div class="weather__wind">
           <p class="weather__specifics-label">Wind</p>
-          <p class="weather__specifics-value" id="humidityValue">9 mph</p>
+          <p class="weather__specifics-value" id="windValue"></p>
         </div>
         <div class="weather__precipitation">
           <p class="weather__specifics-label">Precipitation</p>
-          <p class="weather__specifics-value" id="precipitationValue">0 in</p>
+          <p class="weather__specifics-value" id="precipValue"></p>
         </div>
       </section>
 
@@ -147,9 +148,8 @@
       </section>
 
       <section class="weather__hourlycontainer" aria-label="hourly forecast">
-        <h2 class="weather__hourlyforecast-heading">
-          Hourly forecast ** put pre tag dummy text here?!!**
-        </h2>
+        <pre>  Hourly forecast      would goooo         in here!
+        </pre>
 
         <div class="weather__hourlyforecast-dropdown">
           <select id="myWeatherDropdownDay" name="weatherDropdownDay">
@@ -181,6 +181,6 @@
       Coded by <a href="#">M G</a>.
     </footer>
 
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/main.js" type="module"></script>
   </body>
 </html>

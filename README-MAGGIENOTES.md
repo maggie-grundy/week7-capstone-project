@@ -154,6 +154,14 @@ And then for this section I'm trying something I just learned a bit about, the `
 
 I realized while working through my positioning & styling that the first results section and feels like/humidity/wind/precipitation containers were mixed together. So I solved this by wrapping that second section in a separate div and reworked my css grid layout.
 
+
+With my JS, I was having issues getting my API request to return an object to my console. Adding encodeURIComponent to the template literal seemed to fix that. In my case, my city name has a space in it, which can make URLs get weird. 
+
+```
+        const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=10&language=en&format=json`);
+
+```
+
 ### Broad Checklist
 
 **Phase 1: Setup & Skeleton**
@@ -167,40 +175,34 @@ I realized while working through my positioning & styling that the first results
 - [ ] **Don't need to include daily & hourly section!**
 - [X] figure out overlay in results background
 - [ ] figure out gear icon in units dropdown (isn't quite right)
-
-
+- [ ] fix overflow in p text (specifics cards)
 
 # - [ ] ***Cross-reference rubric with my checklist***
-
-
-
-
 
 **Phase 2: Responsive layout & styling**
 
 - [X] Build the mobile version first — get the sections stacking nicely, typography sizes, spacing.
 - [ ] DON'T FORGET ERROR STATES
+
   - [ ] including 404 api error state
   - [ ] Output div for error message? (not in the spec I don't think but could use for pre example text ?)
-
-- [] Then work desktop-layout: e.g., maybe sidebar + main section, or split layout.
-- [] Define your grid for the cards/forecast area: maybe a 7-day forecast grid.
-
 - [X] Use flex in cards: icon + temp + day label etc.
 
-- [] Test key breakpoints: mobile portrait, tablet, desktop.
 - [] Add hover/focus states for interactive elements (buttons, search input) — the challenge spec mentions it.
+- [] (if time) Work desktop-layout: e.g., maybe sidebar + main section, or split layout.
 
 **Phase 3: Data & interactivity**
 
-- [] Choose and integrate the Open‑Meteo API.
-- [] Write the JS to fetch data when the user enters a location.
+- [X] Choose and integrate the Open‑Meteo API
+- [X] Write the JS to fetch data when the user enters a location.
+
 - [] Parse and display: current weather (icon, temp, location), extra metrics (feels like, humidity, wind, precipitation).
-- [] Build the 7-day forecast block, plus hourly forecast section.
+  - **[] Pull weathercode values and link to weather icons (if/else if/else)**
 - [] Implement unit switching (Metric ↔ Imperial) for temperature, wind speed, precipitation.
+- [] Build the 7-day forecast block, plus hourly forecast section. (if time)
 - [] Add the interactive day selector in hourly forecast (so when you pick a day, it shows that day’s hourly data).
 
-**Phase 4: Polish & nice-to-haves**
+**Phase 4: Polish** 
 
 - [] Add loading & error states: what if the location isn’t found?
 - [] Fine-tune responsiveness: maybe hide/show elements differently on small screens.
@@ -223,15 +225,19 @@ I realized while working through my positioning & styling that the first results
   - [X] Change commas in typeface filenames to hyphens to avoid unexpected behaviors
   - [X] Create scripts folder with: just main.js for now (link in html)
   - [X] Create utils folder with css variables (link in css)
-  - [ ] Create HTML structure
-  - [ ] Determine where media queries are necessary or if grid and flex are sufficient to develop the layout responsively
-  - [ ] Create mobile CSS skeleton
-- [] **Hour 1-2:** Work on mobile layout: search bar, current weather section, forecast cards stacking.
-- [] **Hour 2-3:** Desktop layout: grid for forecast cards, sidebar/main differences. Add flex for cards.
-- [] **Hour 3-4:** Start JS: fetch data for a hard-coded location, display in current weather section.
+  - [X] Create HTML structure
+  - [X] Determine where media queries are necessary or if grid and flex are sufficient to develop the layout responsively
+  - [X] Create mobile CSS skeleton
+
+- [X] **Hour 1-2:** Work on mobile layout: search bar, current weather section, forecast cards stacking.
+- [X] **Hour 2-3:** Desktop layout: grid for forecast cards, sidebar/main differences. Add flex for cards.
+- [X] **Hour 3-4:** Start JS: fetch data for a hard-coded location, display in current weather section.
+
 - [] **Hour 4-5:** Hook up search functionality: user input, API call, update UI.
 - [] **Hour 5-6:** Add unit toggle (metric/imperial) logic and link it to UI conversion.
-- [] **Evening wrap-up:** test responsiveness, try a different location, fix layout quirks.
+- [] **wrap-up:** test responsiveness, try a different location, fix layout quirks.
+
+**These hours were more like days! But every time I do this it takes less time and I trust it will keep getting easier.**
 
 For my structure, I am first trying a grid and flex approach. I'm using [cssgridgenerator.io](https://cssgridgenerator.io/ "css grid generator") to create my containers. I am creating `<main class="main">` to hold all of my smaller containers.
 
